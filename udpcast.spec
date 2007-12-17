@@ -9,7 +9,6 @@ Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
 Source0:	http://udpcast.linux.lu/download/%{name}-%{_prel}.tar.bz2
 #BuildRequires:
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 UDPcast is a file transfer tool that can send data simultaneously to many 
