@@ -1,15 +1,15 @@
-%define	_prel	20070218
+%define	_prel	20071228
 
 Summary:	UDP broadcast installation
 Name:		udpcast
 Version:	0.0
 Release:	%mkrel 0.%{_prel}.1
-License:	GPL BSD
+License:	GPLv2 and BSD-like
 Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
-Source0:	http://udpcast.linux.lu/download/%{name}-%{_prel}.tar.bz2
+Source0:	http://udpcast.linux.lu/download/%{name}-%{_prel}.tar.gz
 #BuildRequires:
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Buildroot:      %{_tmppath}/%{name}-%{version}
 
 %description
 UDPcast is a file transfer tool that can send data simultaneously to many 
@@ -22,26 +22,16 @@ it won't take longer to install 15 machines than it would to install just 2
 %setup -qn %{name}-%{_prel}
 
 %build
-perl -pi -e "s/CFLAGS=.*/CFLAGS=%{optflags}/" Makefile
-%configure2_5x \
-    --prefix=%{buildroot}%{_prefix} \
-    --mandir=%{buildroot}%{_mandir}
-
-make
+%configure
+%make
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %makeinstall_std
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog.txt cmd.html COPYING *.txt
-%attr(755,root,root) %{_sbindir}/udp*
+%doc cmd.html COPYING *.txt
+%{_sbindir}/udp-receiver
+%{_sbindir}/udp-sender
 %{_mandir}/man1/udp-receiver.1*
 %{_mandir}/man1/udp-sender.1*
-
-
