@@ -3,7 +3,7 @@
 Summary:	UDP broadcast installation
 Name:		udpcast
 Version:	0.0
-Release:	%mkrel 0.%{_prel}.1
+Release:	%mkrel -c %{_prel} 2
 License:	GPLv2 and BSD-like
 Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
