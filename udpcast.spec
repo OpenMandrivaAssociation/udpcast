@@ -22,14 +22,14 @@ it won't take longer to install 15 machines than it would to install just 2
 %setup -qn %{name}-%{_prel}
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
 %makeinstall_std
 
 %files
-%defattr(644,root,root,755)
+%defattr(-,root,root)
 %doc cmd.html COPYING *.txt
 %{_sbindir}/udp-receiver
 %{_sbindir}/udp-sender
