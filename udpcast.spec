@@ -1,9 +1,9 @@
-%define	_prel	20071228
+%define	_prel	20081116
 
 Summary:	UDP broadcast installation
 Name:		udpcast
 Version:	0.0
-Release:	%mkrel -c %{_prel} 3
+Release:	%mkrel -c %{_prel} 1
 License:	GPLv2 and BSD-like
 Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
@@ -33,5 +33,6 @@ it won't take longer to install 15 machines than it would to install just 2
 %doc cmd.html COPYING *.txt
 %{_sbindir}/udp-receiver
 %{_sbindir}/udp-sender
+%{_includedir}/udpcast/rateGovernor.h
 %{_mandir}/man1/udp-receiver.1*
 %{_mandir}/man1/udp-sender.1*
