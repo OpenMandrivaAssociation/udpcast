@@ -1,4 +1,4 @@
-%define	_prel	20081116
+%define	_prel	20090830
 
 Summary:	UDP broadcast installation
 Name:		udpcast
