@@ -1,0 +1,12 @@
+diff -urN udpcast-20120424/console.h udpcast-20120424-patched/console.h
+--- udpcast-20120424/console.h	2005-12-23 08:59:18.000000000 +1000
++++ udpcast-20120424-patched/console.h	2014-08-26 01:36:18.906953637 +1100
+@@ -6,6 +6,8 @@
+ #include <winbase.h>
+ #endif /* __MINGW32__ */
+ 
++#include <sys/select.h>
++
+ #define prepareConsole udpc_prepareConsole
+ #define getConsoleFd udpc_getConsoleFd
+ #define restoreConsole udpc_restoreConsole
