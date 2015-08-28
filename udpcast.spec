@@ -3,7 +3,7 @@
 Summary:	UDP broadcast installation
 Name:		udpcast
 Version:	20120424
-Release:	1
+Release:	2
 License:	GPLv2+ and BSD-like
 Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
@@ -21,9 +21,20 @@ it won't take longer to install 15 machines than it would to install just 2
 %doc cmd.html COPYING *.txt
 %{_sbindir}/udp-receiver
 %{_sbindir}/udp-sender
-%{_includedir}/udpcast/rateGovernor.h
 %{_mandir}/man1/udp-receiver.1*
 %{_mandir}/man1/udp-sender.1*
+
+#----------------------------------------------------------------------------
+
+%package devel
+Summary:	Header files for UDPcast
+Requires:	%{name} = %{EVRD}
+
+%description devel
+Header files for UDPcast
+
+%files devel
+%{_includedir}/udpcast/rateGovernor.h
 
 #----------------------------------------------------------------------------
 
