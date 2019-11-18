@@ -3,7 +3,7 @@
 Summary:	UDP broadcast installation
 Name:		udpcast
 Version:	20120424
-Release:	2
+Release:	3
 License:	GPLv2+ and BSD-like
 Group:		Networking/Other
 Url:		http://udpcast.linux.lu/
@@ -43,9 +43,9 @@ Header files for UDPcast
 %patch0 -p1
 
 %build
-%configure2_5x
-%make
+%configure
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
