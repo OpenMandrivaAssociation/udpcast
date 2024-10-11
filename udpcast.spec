@@ -2,12 +2,12 @@
 
 Summary:	UDP broadcast installation
 Name:		udpcast
-Version:	20200328
+Version:	20230924
 Release:	1
 License:	GPLv2+ and BSD-like
 Group:		Networking/Other
-Url:		http://udpcast.linux.lu/
-Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
+Url:		https://udpcast.linux.lu/
+Source0:	https://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 Patch0:		udpcast-20120424-gcc4.9.patch
 
 %description
