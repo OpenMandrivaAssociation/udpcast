@@ -19,8 +19,8 @@ it won't take longer to install 15 machines than it would to install just 2
 
 %files
 %doc cmd.html COPYING *.txt
-#{_bindir}/udp-receiver
-#{_bindir}/udp-sender
+%{_bindir}/udp-receiver
+%{_bindir}/udp-sender
 %{_mandir}/man1/udp-receiver.1*
 %{_mandir}/man1/udp-sender.1*
 
@@ -48,4 +48,5 @@ Header files for UDPcast
 
 %install
 %make_install
-
+mv %{buildroot}%{_prefix}/sbin/* %{buildroot}%{_bindir}/
+rmdir %{buildroot}%{_prefix}/sbin
