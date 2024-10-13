@@ -2,13 +2,14 @@
 
 Summary:	UDP broadcast installation
 Name:		udpcast
-Version:	20200328
+Version:	20230924
 Release:	1
 License:	GPLv2+ and BSD-like
 Group:		Networking/Other
-Url:		http://udpcast.linux.lu/
-Source0:	http://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
+Url:		https://udpcast.linux.lu/
+Source0:	https://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 Patch0:		udpcast-20120424-gcc4.9.patch
+Patch1:   fix-sbin-bin-migration.patch
 
 %description
 UDPcast is a file transfer tool that can send data simultaneously to many
@@ -19,8 +20,8 @@ it won't take longer to install 15 machines than it would to install just 2
 
 %files
 %doc cmd.html COPYING *.txt
-%{_sbindir}/udp-receiver
-%{_sbindir}/udp-sender
+%{_bindir}/udp-receiver
+%{_bindir}/udp-sender
 %{_mandir}/man1/udp-receiver.1*
 %{_mandir}/man1/udp-sender.1*
 
@@ -39,8 +40,7 @@ Header files for UDPcast
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch0 -p1
+%autosetup -p1
 
 %build
 %configure
@@ -48,4 +48,3 @@ Header files for UDPcast
 
 %install
 %make_install
-
