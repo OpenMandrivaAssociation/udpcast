@@ -9,6 +9,7 @@ Group:		Networking/Other
 Url:		https://udpcast.linux.lu/
 Source0:	https://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 Patch0:		udpcast-20120424-gcc4.9.patch
+Patch1:   fix-sbin-bin-migration.patch
 
 %description
 UDPcast is a file transfer tool that can send data simultaneously to many
@@ -39,8 +40,7 @@ Header files for UDPcast
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch 0 -p1
+%autosetup -p1
 
 %build
 %configure
@@ -48,5 +48,3 @@ Header files for UDPcast
 
 %install
 %make_install
-mv %{buildroot}%{_prefix}/sbin/* %{buildroot}%{_bindir}/
-rmdir %{buildroot}%{_prefix}/sbin
