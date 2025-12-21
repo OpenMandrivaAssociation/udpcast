@@ -11,6 +11,11 @@ Source0:	https://udpcast.linux.lu/download/%{name}-%{version}.tar.gz
 Patch0:		udpcast-20120424-gcc4.9.patch
 Patch1:   fix-sbin-bin-migration.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 UDPcast is a file transfer tool that can send data simultaneously to many
 destinations on a LAN. This can for instance be used to install entire
